@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mes sujets BCPST</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+
+  <style>
+    body { padding: 40px; font-family: Arial; }
+    #content { max-width: 800px; }
+    .missing { color: gray; }
+    .error { color: red; }
+  </style>
+</head>
+
+<body>
+
+<h1>Liste des sujets</h1>
+
+<ul id="subjects-list"></ul>
+
+<hr>
+
+<div id="content" class="markdown-body"></div>
+
+<script>
+
+const USERNAME = "LECARROU";
+const REPO = "bcpst-subject-generator";
+const BRANCH = "master";
+
+// Chargement du CSV
+fetch("docs/subjects.csv")
+  .then(response => response.text())
+  .then(csvText => generateLinks(csvText))
+  .catch(() => {
+    document.getElementById("content").innerHTML =
+      "<p class='error'>Erreur lors du chargement du fichier subjects.csv</p>";
+  });
+
+
+function generateLinks(csvText) {
+
+  const lines = csvText.split("\n").slice(1);
+  const list = document.getElementById("subjects-list");
+
+  lines.forEach(line => {
+
+    if (!line.trim()) return;
+
+    // Regex adaptée à ton format : number,"subject"
+    const match = line.match(/^(\d+),"(.+)"$/);
+
+    if (!match) return;
+
+    const number = match[1];
+    const subject = match[2];
+
+    const mdPath = `markdowns/sujet_${number}.md`;
+    const rawUrl = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${mdPath}`;
+
+    const li = document.createElement("li");
+
+    // Vérification si le fichier existe
+    fetch(mdPath, { method: 'HEAD' })
+      .then(response => {
+
+        if (response.ok) {
+
+          // Lien Voir
+          const viewLink = document.createElement("a");
+          viewLink.href = "#";
+          viewLink.innerText = subject;
+          viewLink.onclick = () => loadMarkdown(mdPath);
+
+          // Lien Télécharger
+          const downloadLink = document.createElement("a");
+          downloadLink.href = rawUrl;
+          downloadLink.innerText = "Télécharger";
+          downloadLink.download = "";
+
+          li.appendChild(viewLink);
+          li.appendChild(document.createTextNode(" | "));
+          li.appendChild(downloadLink);
+
+        } else {
+          showMissing(li, subject);
+        }
+
+      })
+      .catch(() => showMissing(li, subject));
+
+    list.appendChild(li);
+  });
+}
+
+
+function showMissing(li, subject) {
+  li.innerHTML = `<span class="missing">${subject} (non disponible)</span>`;
+}
+
+
+function loadMarkdown(file) {
+  fetch(file)
+    .then(response => {
+      if (!response.ok) throw new Error("Fichier introuvable");
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById("content").innerHTML =
+        marked.parse(text);
+    })
+    .catch(() => {
+      document.getElementById("content").innerHTML =
+        "<p class='error'>Le fichier markdown est introuvable.</p>";
+    });
+}
+
+</script>
+
+</body>
+</html>
