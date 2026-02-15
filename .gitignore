@@ -1,0 +1,16 @@
+.venv/
+
+json/
+
+# Byte-compiled / cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignorer les dossiers __pycache__ partout dans le projet
+**/__pycache__/
+
+# Optionnel : ignorer tous les .pyc générés dans tous les sous-dossiers
+**/*.pyc
+
+.env

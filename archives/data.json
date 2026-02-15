@@ -1,0 +1,59 @@
+{
+  "sujet": "Les mécanismes de régulation de l'expression génétique",
+  "problematique": "Comment les organismes sont-ils capables de réguler de manière précise et efficace l'expression des gènes dans leur développement et leur réponse aux environnements?",
+  "introduction": {
+    "definitions": [
+      "Expression génétique : processus par lequel un organisme utilise une séquence d'ADN pour produire une protéine ou un autre produit",
+      "Régulation de l'expression génétique : mécanismes qui contrôlent la production et la fonction des gènes"
+    ],
+    "cadre": "La régulation de l'expression génétique est un sujet complexe et fondamental en biologie moléculaire",
+    "annonce_problematique": "Les organismes doivent être capables de réguler de manière précise l'expression des gènes pour répondre aux conditions environnementales changeantes",
+    "annonce_plan": "Nous allons explorer les principaux mécanismes de régulation de l'expression génétique, tels que la régulation des transcripts et la modification des protéines"
+  },
+  "plan": [
+    {
+      "titre": "Les mécanismes de régulation à l'échelle des transcripts",
+      "informations_cles": [
+        "La transcription est une étape cruciale dans le processus d'expression génétique",
+        "Les éléments régulateurs, tels que les sites de liaison pour les facteurs de transcription, jouent un rôle essentiel dans la régulation des transcripts"
+      ],
+      "schemas": [
+        {
+          "nom": "Transcription régulée",
+          "description": "Processus par lequel les gènes sont transcrits en mRNA dans la nucleus",
+          "interet_concours": "Compréhension de la transcription régulée est essentielle pour la régulation de l'expression génétique"
+        }
+      ]
+    },
+    {
+      "titre": "Les mécanismes de modification des protéines",
+      "informations_cles": [
+        "Les modifications post-traductionnelles, telles que les phosphorylations et les acrylation, peuvent réguler la fonction des protéines"
+      ],
+      "schemas": [
+        {
+          "nom": "Modification post-traductionnelle",
+          "description": "Processus par lequel les protéines sont modifiées après leur synthèse pour changer leurs propriétés ou leurs fonctions"
+        },
+        {
+          "nom": "Phosphorylation",
+          "description": "Modifications post-traductionnelles qui impliquent l'addition d'un groupe phosphore à la protéine pour modifier sa fonction"
+        }
+      ]
+    },
+    {
+      "titre": "Les mécanismes de régulation à l'échelle des gènes",
+      "informations_cles": [
+        "La modification de l'exonification et de l'expression alternative peut réguler la production des transcripts",
+        "Les mécanismes d'épigenèse, tels que les modifications histones et les méthylation du DNA, peuvent influencer l'expression des gènes"
+      ],
+      "schemas": [
+        {
+          "nom": "Épigenèse",
+          "description": "Processus qui modifient la fonction de l'exonification ou de l'expression alternative sans changer le séquence de l'ADN"
+        }
+      ]
+    }
+  ],
+  "conclusion": "En conclusion, les mécanismes de régulation de l'expression génétique sont complexes et multiformes, et comprenent des processus à l'échelle des transcripts, des protéines et des gènes. Une compréhension approfondie de ces mécanismes est essentielle pour comprendre comment les organismes répondent aux conditions environnementales changeantes."
+}
