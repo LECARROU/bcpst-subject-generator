@@ -10,22 +10,77 @@
         href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
 
   <style>
-    body { padding: 40px; font-family: Arial; }
-    #content { max-width: 800px; }
-    .missing { color: gray; }
-    .error { color: red; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+    }
+
+    /* Colonne gauche */
+    #sidebar {
+      width: 350px;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+
+    /* Colonne droite */
+    #preview {
+      flex: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0366d6;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .missing {
+      color: gray;
+    }
+
+    .error {
+      color: red;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
   </style>
 </head>
 
 <body>
 
-<h1>Liste des sujets</h1>
+<!-- COLONNE 1 -->
+<div id="sidebar">
+  <h1>Sujets</h1>
+  <ul id="subjects-list"></ul>
+</div>
 
-<ul id="subjects-list"></ul>
+<!-- COLONNE 2 -->
+<div id="preview" class="markdown-body">
+  <h2>Prévisualisation</h2>
+  <p>Sélectionnez un sujet pour afficher son contenu.</p>
+</div>
 
-<hr>
-
-<div id="content" class="markdown-body"></div>
 
 <script>
 
@@ -33,14 +88,9 @@ const USERNAME = "LECARROU";
 const REPO = "bcpst-subject-generator";
 const BRANCH = "master";
 
-// Chargement du CSV
 fetch("docs/subjects.csv")
   .then(response => response.text())
-  .then(csvText => generateLinks(csvText))
-  .catch(() => {
-    document.getElementById("content").innerHTML =
-      "<p class='error'>Erreur lors du chargement du fichier subjects.csv</p>";
-  });
+  .then(csvText => generateLinks(csvText));
 
 
 function generateLinks(csvText) {
@@ -52,70 +102,61 @@ function generateLinks(csvText) {
 
     if (!line.trim()) return;
 
-    // Regex adaptée à ton format : number,"subject"
     const match = line.match(/^(\d+),"(.+)"$/);
-
     if (!match) return;
 
     const number = match[1];
     const subject = match[2];
-
     const mdPath = `markdowns/sujet_${number}.md`;
-    const rawUrl = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${mdPath}`;
 
     const li = document.createElement("li");
 
-    // Vérification si le fichier existe
     fetch(mdPath, { method: 'HEAD' })
       .then(response => {
 
         if (response.ok) {
 
-          // Lien Voir
           const viewLink = document.createElement("a");
           viewLink.href = "#";
           viewLink.innerText = subject;
           viewLink.onclick = () => loadMarkdown(mdPath);
 
-          // Lien Télécharger
           const downloadLink = document.createElement("a");
-          downloadLink.href = rawUrl;
-          downloadLink.innerText = "Télécharger";
+          downloadLink.href = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${mdPath}`;
+          downloadLink.innerText = " ⬇";
           downloadLink.download = "";
 
           li.appendChild(viewLink);
-          li.appendChild(document.createTextNode(" | "));
+          li.appendChild(document.createTextNode(" "));
           li.appendChild(downloadLink);
 
         } else {
-          showMissing(li, subject);
+          li.innerHTML = `<span class="missing">${subject} (non disponible)</span>`;
         }
 
       })
-      .catch(() => showMissing(li, subject));
+      .catch(() => {
+        li.innerHTML = `<span class="missing">${subject} (non disponible)</span>`;
+      });
 
     list.appendChild(li);
   });
 }
 
 
-function showMissing(li, subject) {
-  li.innerHTML = `<span class="missing">${subject} (non disponible)</span>`;
-}
-
-
 function loadMarkdown(file) {
+
   fetch(file)
     .then(response => {
-      if (!response.ok) throw new Error("Fichier introuvable");
+      if (!response.ok) throw new Error();
       return response.text();
     })
     .then(text => {
-      document.getElementById("content").innerHTML =
+      document.getElementById("preview").innerHTML =
         marked.parse(text);
     })
     .catch(() => {
-      document.getElementById("content").innerHTML =
+      document.getElementById("preview").innerHTML =
         "<p class='error'>Le fichier markdown est introuvable.</p>";
     });
 }
