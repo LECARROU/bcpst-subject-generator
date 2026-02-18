@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const preview = document.getElementById("markdown-preview");
 
   // Charger la liste des sujets
-  fetch("/docs/subjects.csv")
+  fetch(SUBJECTS_CSV_URL)
     .then(response => response.text())
     .then(csvText => {
       const lines = csvText.split("\n").slice(1);
