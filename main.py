@@ -58,8 +58,10 @@ def main(args):
     docs = DOCS_DIR / "subjects.csv"
     subjects = load_csv(docs)
     success = False
-    # json_output_path = JSON_DIR / f"sujet_1.json"
-    # convert_json_to_md(json_output_path, 1)
+    # for i in range(4):
+    #     idx = i+1
+    #     json_output_path = JSON_DIR / f"sujet_{idx}.json"
+    #     convert_json_to_md(json_output_path, idx)
 
     for attempt in range(1):
         try:

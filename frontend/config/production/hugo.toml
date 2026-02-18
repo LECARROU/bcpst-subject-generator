@@ -1,0 +1,2 @@
+# Overrides for production environment
+baseURL = "https://lecarrou.github.io/bcpst-subject-generator/"

@@ -50,20 +50,20 @@ def convert_json_to_md(path: str, id)->None:
         md.append(f"- 📍 Titre : {partie['titre']}")
         
         # Informations clés
-        if 'Informations clées' in partie:
-            md.append("- 🔑 informations_cles :")
+        if 'informations_cles' in partie:
+            md.append("- 🔑 Informations clées :")
             for i, info in enumerate(partie['informations_cles']):
                 md.append(f"  - {i+1} : {info},")
         
         # Schémas
         if 'schemas' in partie:
-            md.append("- 📈 Schemas :")
+            md.append("- 📈 Schémas :")
             for schema_idx, schema in enumerate(partie['schemas']):
-                md.append(f"  - Schema {schema_idx + 1}")
-                md.append(f"    - nom : {schema['nom']},")
-                md.append(f"    - description : {schema['description']},")
+                md.append(f"  - Schéma {schema_idx + 1}")
+                md.append(f"    - Nom : {schema['nom']},")
+                md.append(f"    - Description : {schema['description']},")
                 if 'interet_concours' in schema:
-                    md.append(f"    - interet_concours : {schema['interet_concours']}")
+                    md.append(f"    - Intérêt pour le concours : {schema['interet_concours']}")
 
     # 5. Conclusion
     md.append("## 🔥 Conclusions")
