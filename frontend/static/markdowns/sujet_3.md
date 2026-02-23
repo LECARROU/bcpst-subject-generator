@@ -8,7 +8,7 @@ Comment la diversité structurale des macromolécules glucidiques influence-t-el
 - 🎤 Annonce de la problématique : Nous nous interrogerons sur la manière dont la diversité structurale des glucides conditionne leurs fonctions et leurs utilisations.,
 - 🎯 Annonce du plan : Nous examinerons d'abord la diversité structurale des glucides, puis leurs rôles biologiques, et enfin leurs applications biotechnologiques.,
 ## 🧬 plan
-### 0 : 🖍️ Partie 1
+### Partie 1 🖍️ 
 - 📍 Titre : Diversité structurale des glucides
 - 🔑 Informations clées :
   - 1 : Les glucides peuvent être linéaires ou ramifiés.,
@@ -19,7 +19,7 @@ Comment la diversité structurale des macromolécules glucidiques influence-t-el
     - Nom : Structure des polysaccharides,
     - Description : Représentation des structures linéaires et ramifiées des polysaccharides.,
     - Intérêt pour le concours : Comprendre les bases structurales des glucides pour expliquer leurs fonctions.
-### 1 : 🖍️ Partie 2
+### Partie 2 🖍️ 
 - 📍 Titre : Rôles biologiques des glucides
 - 🔑 Informations clées :
   - 1 : Les glucides sont essentiels pour le stockage de l'énergie (ex: glycogène, amidon).,
@@ -30,7 +30,7 @@ Comment la diversité structurale des macromolécules glucidiques influence-t-el
     - Nom : Fonctions biologiques des glucides,
     - Description : Illustration des rôles des glucides dans le stockage, la reconnaissance et la structure.,
     - Intérêt pour le concours : Relier structure et fonction pour comprendre l'importance des glucides.
-### 2 : 🖍️ Partie 3
+### Partie 3 🖍️ 
 - 📍 Titre : Applications biotechnologiques des glucides
 - 🔑 Informations clées :
   - 1 : Les glucides sont utilisés dans la production de biocarburants.,

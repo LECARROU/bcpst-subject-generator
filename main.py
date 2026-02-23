@@ -13,10 +13,10 @@ from utils.loader import load_csv
 from utils.utils import convert_json_to_md
 
 BASE_DIR = Path(__file__).resolve().parents[0]
-DOCS_DIR = Path(__file__).resolve().parents[0] / "docs"
+DOCS_DIR = Path(__file__).resolve().parents[0] / "frontend/static/docs"
 PROMPTS_DIR = Path(__file__).resolve().parents[0] / "prompts"
 JSON_DIR = MD_DIR = Path(__file__).resolve().parents[0] / "json"
-MD_DIR = Path(__file__).resolve().parents[0] / "markdowns"
+MD_DIR = Path(__file__).resolve().parents[0] / "frontend/static/markdowns"
 
 def get_llm():
     if DEFAULT_PROVIDER == "openrouter":

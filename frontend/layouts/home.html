@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="floating-chick-container text-center">
-  <img src="{{ "images/chick-3d.png" | relURL }}" alt="3D Chick Mascot" class="floating-chick">
+  <img src='{{ "images/chick-3d.png" | relURL }}' alt="3D Chick Mascot" class="floating-chick">
 </div>
 <section class="section container-fluid mt-n5 pb-3">
   <div class="row justify-content-center">
@@ -40,6 +40,7 @@
         </div>
         <div class="col-lg-5">
           <h2 class="h4">Documentation</h2>
+          <a href="mailto:votre-email@example.com?subject=BCPST">Contacter </a>l'auteur pour suggérer des corrections et/ou des améliorations.
           <p>Plus d'informations sur <a href="https://github.com/LECARROU/bcpst-subject-generator">Github</a>.</p>
         </div>
       </div>
@@ -74,8 +75,8 @@
     document.documentElement.setAttribute("data-bs-theme", "dark");
   </script>
   <script>
-    const SUBJECTS_CSV_URL = "{{ "docs/subjects.csv" | relURL }}";
-    const MARKDOWN_BASE_URL = "{{ "markdowns/" | relURL }}";
+    const SUBJECTS_CSV_URL = '{{ "docs/subjects.csv" | relURL }}';
+    const MARKDOWN_BASE_URL = '{{ "markdowns/" | relURL }}';
   </script>
   <style>
     .floating-chick-container {
@@ -131,8 +132,8 @@
 
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <script src="{{ "js/marked.min.js" | relURL }}"></script>
-  <script src="{{ "js/custom.js" | relURL }}"></script>
+  <script src='{{ "js/marked.min.js" | relURL }}'></script>
+  <script src='{{ "js/custom.js" | relURL }}'></script>
   {{ end }}
 {{ end }}
 

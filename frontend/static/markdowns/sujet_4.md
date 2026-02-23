@@ -8,7 +8,7 @@ Comment le séquençage des molécules a-t-il révolutionné notre compréhensio
 - 🎤 Annonce de la problématique : Nous nous interrogerons sur l'impact du séquençage moléculaire sur notre compréhension des systèmes biologiques.,
 - 🎯 Annonce du plan : Nous examinerons d'abord les techniques de séquençage, puis leur application en biologie, et enfin les perspectives futures.,
 ## 🧬 plan
-### 0 : 🖍️ Partie 1
+### Partie 1 🖍️ 
 - 📍 Titre : Les techniques de séquençage moléculaire
 - 🔑 Informations clées :
   - 1 : Le séquençage de Sanger a été la première méthode développée.,
@@ -19,7 +19,7 @@ Comment le séquençage des molécules a-t-il révolutionné notre compréhensio
     - Nom : Schéma du séquençage de Sanger,
     - Description : Illustration des étapes du séquençage de Sanger, incluant la synthèse d'ADN et la séparation par électrophorèse.,
     - Intérêt pour le concours : Comprendre les bases historiques et techniques du séquençage.
-### 1 : 🖍️ Partie 2
+### Partie 2 🖍️ 
 - 📍 Titre : Applications du séquençage en biologie
 - 🔑 Informations clées :
   - 1 : Le séquençage a permis le décryptage du génome humain.,
@@ -30,7 +30,7 @@ Comment le séquençage des molécules a-t-il révolutionné notre compréhensio
     - Nom : Carte du génome humain,
     - Description : Représentation des chromosomes humains et des gènes identifiés par séquençage.,
     - Intérêt pour le concours : Illustrer l'impact du séquençage sur la génomique humaine.
-### 2 : 🖍️ Partie 3
+### Partie 3 🖍️ 
 - 📍 Titre : Perspectives futures du séquençage moléculaire
 - 🔑 Informations clées :
   - 1 : Le séquençage à haut débit pourrait rendre la médecine personnalisée accessible.,

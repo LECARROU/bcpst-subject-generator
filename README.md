@@ -1,6 +1,6 @@
 # Générateur automatique de plans BCPST pour concours Agro/Véto A-CPGE
 
-Ce projet permet de générer automatiquement des plans structurés pour des sujets d’examens BCPST (Biologie, Chimie, Physique et Sciences de la Terre) préparant au concours Agro/Véto A-CPGE, en utilisant des modèles LLM locaux (LLama 3.2 via Ollama) ou des modèles OpenRouter.
+Ce projet permet de générer automatiquement des plans structurés pour des sujets d’examens BCPST (Biologie, Chimie, Physique et Sciences de la Terre) préparant au concours Agro/Véto A-CPGE, en utilisant des modèles LLM locaux (LLama 3.2 via Ollama) ou des modèles OpenRouter (GPT-4o).
 
 Le pipeline produit pour chaque sujet : 
 
@@ -18,16 +18,18 @@ Le pipeline produit pour chaque sujet :
 
 ```markdown
 biology/
-├─ docs/
-│ └─ subjects.csv # Liste des sujets d’examens
+├─ frontend/ # Site web 
+│ └─ static/
+│     └─ docs/
+│          └─ subjects.csv # Liste des sujets d’examens
+│     └─ markdowns/
+│          └─ sujet_1.md # Sujet strcuturé au format markdown généré avec GPT-4o
 ├─ llm/
 │ ├─ base.py # Classe abstraite provider
 │ ├─ ollama_client.py # Client Ollama / LLM local
 │ └─ openrouter_client.py # Client OpenRouter
 ├─ models/
 │ └─ response_models.py # Modèles Pydantic pour valider la sortie
-├─ markdowns/
-│ └─ sujet_1.md # Sortie au format .md
 ├─ prompts/
 │ ├─ schema_instruction.md # Schéma JSON à respecter
 │ ├─ system.md # Prompt system décrivant le rôle du LLM
@@ -78,7 +80,7 @@ Dépendances principales
 🚀 Utilisation
 Ligne de commande
 ```bash
-python main.py --output-dir output
+python main.py
 ```
 
 ### 🛠️ Personnalisation des prompts

@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
 
-MD_DIR = Path(__file__).resolve().parent.parent / "markdowns"
-
+# MD_DIR = Path(__file__).resolve().parent.parent / "markdowns"
+MD_DIR = Path(__file__).resolve().parent.parent / "frontend/static/markdowns"
 def convert_json_to_md(path: str, id)->None:
 
     # Charger le JSON
@@ -13,7 +13,6 @@ def convert_json_to_md(path: str, id)->None:
     md = []
 
     # 1. Titre principal (sujet)
-    md.append(f"# Sujet numéro : {id}")
     md.append(f"# 🧪 {result['sujet']}")
 
     # 2. Problématique
@@ -44,7 +43,7 @@ def convert_json_to_md(path: str, id)->None:
     md.append("## 🧬 plan")
 
     for partie_idx, partie in enumerate(result['plan']):
-        md.append(f"### {partie_idx} : 🖍️ Partie {partie_idx + 1}")
+        md.append(f"### 🖍️ Partie {partie_idx + 1}")
         
         # Titre
         md.append(f"- 📍 Titre : {partie['titre']}")
