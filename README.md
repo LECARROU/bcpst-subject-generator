@@ -23,7 +23,7 @@ biology/
 │     └─ docs/
 │          └─ subjects.csv # Liste des sujets d’examens
 │     └─ markdowns/
-│          └─ sujet_1.md # Sujet strcuturé au format markdown généré avec GPT-4o
+│          └─ sujet_1.md # Sujet structuré au format markdown généré avec GPT-4o
 ├─ llm/
 │ ├─ base.py # Classe abstraite provider
 │ ├─ ollama_client.py # Client Ollama / LLM local
